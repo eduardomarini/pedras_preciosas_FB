@@ -16,3 +16,8 @@ pedrasPreciosas dados[] = {
     {"Rubi", 0.065, 134, 315},
     {"Jade", 0.012, 111, 280}
 };
+
+int pp[5][401]; // declara uma matriz com os dados 
+
+
+
