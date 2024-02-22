@@ -19,5 +19,14 @@ pedrasPreciosas dados[] = {
 
 int pp[5][401]; // declara uma matriz com os dados 
 
+int precoMaximo(int n, int capacidade) {
+    // n -> representa o número de tipos de pedras preciosas
+    // capacidade -> capacidade máxima da mochila
+
+    if(n == 0 || capacidade == 0) { // 
+        return 0;
+    }
+}
+
 
 
