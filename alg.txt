@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+struct Pedra {
+    string nome;
+    double volume;
+    int peso;
+    int preco;
+};
+
+Pedra pedras[] = {
+    {"Diamante", 0.455, 263, 500},
+    {"Esmeralda", 0.521, 127, 410},
+    {"Topázio", 0.857, 254, 320},
+    {"Rubi", 0.065, 134, 315},
+    {"Jade", 0.012, 111, 280}
+};
+
+int dp[6][401];
+
+int maxPreco(int n, int capacidade) {
+    if (n == 0 || capacidade == 0)
+        return 0;
+
+    if (dp[n][capacidade] != 0)
+        return dp[n][capacidade];
+
+    if (pedras[n - 1].peso > capacidade)
+        return dp[n][capacidade] = maxPreco(n - 1, capacidade);
+
+    return dp[n][capacidade] = max(maxPreco(n - 1, capacidade), 
+                                    maxPreco(n - 1, capacidade - pedras[n - 1].peso) + pedras[n - 1].preco);
+}
+
+int main() {
+    int capacidade_maxima = 400;
+
+    int resultado = maxPreco(5, capacidade_maxima);
+
+    cout << "O valor máximo que pode ser obtido é: R$" << resultado << endl;
+
+    return 0;
+}
