@@ -82,5 +82,9 @@ int main() {
 }
 
 
-
+// Analise da complexidade assintótica
+// calculaPreco() -> número de iterações não aumenta conforme o tamanho do vetor -> O(1)
+// forcaBruta() -> para cada itens existe duas chamadas recursivas, uma incluindo o item e outra excluindo, portanto a qauntidade de chamadas será exponencial -> O(2^N)
+// main() -> chamamos a função força bruta uma vez [O(2^N)], loop para definir a melhor seleção [O(1)], portanto main() será de -> O(2^N)
+// A complexidade assintótica total do script é de O(2^N)
 
