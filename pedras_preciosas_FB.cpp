@@ -26,7 +26,7 @@ int maxPreco = 0;
 vector<bool> melhorSelecao; 
 
 // Função para calcular o preço total de uma seleção de itens
-int calculaPrecoTotal(const vector<bool>& selecao) {
+int calculaPrecoTotal(const vector<bool>& selecao) { // 
     int precoTotal = 0;
     int pesoTotal = 0;
     // Itera sobre os itens calcula o preço total e o peso total da seleção
@@ -74,7 +74,8 @@ int main() {
     cout << "Melhor selecao de itens para obter o preco maximo dentro da capacidade do carrinho: " << endl;
     for (int i = 0; i < 5; i++) {
         if (melhorSelecao[i]) 
-            cout << dados[i].nome << endl; // Exibe o nome do item selecionado
+            cout << "Pedra: " << dados[i].nome << " Volume: " << dados[i].volume << " Peso: " << dados[i].peso << " Preco: " << 
+            dados[i].preco << endl; // Exibe os dados dos itens selecionados
     }
     cout << "Preco total: " << maxPreco << endl; // Exibe o preço total da melhor seleção
     return 0;
